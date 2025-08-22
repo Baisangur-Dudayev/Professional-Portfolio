@@ -22,6 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baisangur Dudayev - Cybersecurity Professional</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap');
         
@@ -36,35 +37,9 @@
             background: #000;
             color: #fff;
             overflow-x: hidden;
-            cursor: none;
         }
         
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, rgba(200, 200, 200, 0.8), transparent);
-            border: 2px solid #ccc;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: all 0.1s ease;
-        }
-        
-        .cursor::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(200, 200, 200, 0.4);
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: pulse 2s infinite;
-        }
+        /* Custom Cursor - REMOVED */
         
         /* Background Animation */
         .background {
@@ -559,9 +534,18 @@
             gap: 0.5rem;
         }
         
+        .social-link svg {
+            transition: all 0.3s ease;
+        }
+        
         .social-link:hover {
             color: #022A4D;
             text-shadow: 0 0 10px rgba(2, 42, 77, 0.5);
+        }
+        
+        .social-link:hover svg {
+            fill: #022A4D;
+            filter: drop-shadow(0 0 5px rgba(2, 42, 77, 0.5));
         }
         
         /* Animations */
@@ -713,7 +697,7 @@
         }
         
         .project-description {
-            color: #555555;
+            color: #aaa;
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -728,28 +712,21 @@
         }
         
         .tech-tag {
-            background: rgba(2, 42, 77, 0.2);
-            border: 1px solid rgba(2, 42, 77, 0.5);
+            background: rgba(2, 42, 77, 0.3);
+            border: 1px solid rgba(2, 42, 77, 0.6);
             color: #fff;
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            cursor: default;
         }
         
         .tech-tag.highlighted {
-            background: rgba(2, 42, 77, 0.4);
-            border: 1px solid #022A4D;
+            background: rgba(2, 42, 77, 0.3);
+            border: 1px solid rgba(2, 42, 77, 0.6);
             color: #fff;
-            font-weight: 700;
-            box-shadow: 0 0 10px rgba(2, 42, 77, 0.3);
-        }
-        
-        .tech-tag:hover {
-            background: rgba(2, 42, 77, 0.5);
-            color: #fff;
-            box-shadow: 0 0 10px rgba(2, 42, 77, 0.3);
+            font-weight: 500;
         }
         
         .project-badge {
@@ -857,12 +834,22 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border-radius: 5px;
+            z-index: 100;
+            pointer-events: auto;
+            user-select: none;
+            display: inline-block;
         }
         
         .back-button-small:hover {
             background: rgba(2, 42, 77, 0.6);
             color: #fff;
             box-shadow: 0 0 10px rgba(2, 42, 77, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .back-button-small:active {
+            transform: translateY(0);
+            background: rgba(2, 42, 77, 0.8);
         }
         
         .project-detail-title {
@@ -1084,6 +1071,7 @@
         .profile-image:hover {
             border-color: #022A4D;
             box-shadow: 0 0 20px rgba(2, 42, 77, 0.5);
+            transform: scale(1.05);
         }
         
         .profile-glow {
@@ -1244,6 +1232,23 @@
         .document-card .download-button {
             font-size: 0.9rem;
             padding: 0.8rem 1.5rem;
+        }
+        
+        .download-buttons-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .download-button.secondary {
+            background: linear-gradient(135deg, #555555, #000);
+            border: 2px solid #555555;
+        }
+        
+        .download-button.secondary:hover {
+            box-shadow: 0 0 20px rgba(85, 85, 85, 0.5);
+            border-color: #777;
         }
         
         /* Animations */
@@ -1513,8 +1518,6 @@
     </style>
 </head>
 <body>
-    <div class="cursor"></div>
-    
     <div class="background">
         <div class="energy-field"></div>
         <div class="digital-grid"></div>
@@ -1542,7 +1545,7 @@
     
     <nav>
         <div class="nav-container">
-            <div class="logo">DJ</div>
+            <div class="logo">BD</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
@@ -1553,74 +1556,427 @@
     </nav>
     
     <main class="hero" id="home-section">
-        <h1 class="hero-name">Baisangur Dudayev</h1>
+        <h1 class="hero-name">BAISANGUR DUDAYEV</h1>
         <h2 class="hero-title" id="dynamic-title">Cybersecurity Professional</h2>
-        <button class="power-button" onclick="triggerPowerSurge()">UNLEASH POWER</button>
     </main>
 
-    <section class="project-detail-section" id="project-detail-section" style="display: none;">
+    <!-- Project Detail Sections - Each project has its own independent section -->
+    <section class="project-detail-section" id="pentest-report-detail" style="display: none;">
         <div class="project-detail-container">
             <div class="project-header">
                 <button class="back-button-small" onclick="showProjects()">
                     <span>←</span> BACK TO PROJECTS
                 </button>
-                <h1 class="project-detail-title" id="project-detail-title">PENTEST REPORT</h1>
-                <div class="project-detail-subtitle" id="project-detail-subtitle">Comprehensive Security Assessment</div>
+                <h1 class="project-detail-title">PENTEST REPORT</h1>
+                <div class="project-detail-subtitle">Comprehensive Security Assessment</div>
             </div>
             
             <div class="project-content-wrapper">
                 <div class="project-overview">
                     <h2>Project Overview</h2>
-                    <div class="overview-text" id="project-overview-text">
-                        <p>This comprehensive penetration testing report demonstrates advanced security assessment techniques using industry-standard tools and manual testing methodologies. The project showcases systematic vulnerability identification, exploitation, and detailed documentation following OWASP guidelines.</p>
-                        
-                        <p>Key achievements include thorough reconnaissance, vulnerability scanning, manual testing verification, and professional reporting standards that meet enterprise security requirements.</p>
+                    <div class="overview-text">
+                            <p><b>Summary</b><br>
+                            This project took place within the framework of the <b>Application Security</b> course at Thomas More. The assignment was geared towards thoroughly assessing the security of a web application and compiling a detailed report of the discovered vulnerabilities. To begin, I established a controlled testing environment by configuring a web application on a <b>virtual Ubuntu Server</b>, accessed through my <b>Kali Linux</b> virtual machine. Our instructors introduced a diverse range of undisclosed vulnerabilities, each tailored to challenge students individually.</p>
+
+                            <p>Utilizing <b>Burp Suite</b>'s robust proxy and repeater tools, I methodically examined the application's functionality and susceptibility to potential threats. Throughout the penetration testing process, I diligently explored various facets of the application to identify and analyze potential vulnerabilities.</p>
+
+                            <p>It's worth noting that this pentest project encompassed a comprehensive evaluation of vulnerabilities across topics covered in the course curriculum. These topics served as the framework for our analysis, guiding our efforts towards a thorough assessment of the application's security posture.</p>
+
+                            <p><b>Topics for testing</b></p>
+                            <ul>
+                            <li>SQL Injection</li>
+                            <li>Command Injection</li>
+                            <li>Directory Traversal</li>
+                            <li>Information Disclosure</li>
+                            <li>Authentication</li>
+                            <li>Buffer Overflows & Remote Access</li>
+                            <li>Server-Side Request Forgery (SSRF)</li>
+                            <li>Cross-Site Scripting (XSS)</li>
+                            <li>Cross-Origin Resource Sharing (CORS)</li>
+                            <li>API Testing</li>
+                            <li>File Upload Vulnerabilities</li>
+                            <li>Cross-Site Request Forgery (CSRF)</li>
+                            </ul>
+                            <br>
+                            <p><b>What did I learn?</b><br>
+                            Throughout the project, I developed technical skills in <b>web application security testing</b>, particularly using tools like Burp Suite. I gained hands-on experience with virtual environments such as <b>Ubuntu Server</b> and <b>Kali Linux</b>. Employing systematic testing methodologies, I honed my <b>problem-solving</b> and <b>vulnerability analysis</b> skills. Moving forward, I recognize the importance of continuous learning to stay ahead in the dynamic field of cybersecurity.</p>
+
                     </div>
                     
                     <div class="tech-stack">
                         <h3>Technologies Used</h3>
-                        <div class="tech-list" id="project-tech-list">
+                        <div class="tech-list">
                             <span class="tech-tag">BurpSuite</span>
                             <span class="tech-tag highlighted">Manual Testing</span>
                             <span class="tech-tag highlighted">OWASP</span>
+                            <span class="tech-tag highlighted">Kali</span>
                         </div>
                     </div>
                     
-                    <div class="download-section" id="download-section">
+                    <div class="download-section">
                         <h3>Project Files</h3>
-                        <button class="download-button" onclick="downloadFile('pentest-report.pdf')">
-                            📄 Download Full Report (PDF)
+                        <button class="download-button" onclick="downloadFile('annotated-Pentesting-Report-Shopmore-2CCS01-Baisangur-Dudayev.pdf')">
+                            📄 View Pentest Report
                         </button>
                     </div>
                 </div>
                 
                 <div class="screenshots-section">
                     <h2>Project Screenshots</h2>
-                    <div class="screenshots-grid" id="screenshots-grid">
-                        <!-- Screenshot Template -->
+                    <div class="screenshots-grid">
                         <div class="screenshot-item">
-                            <img src="https://via.placeholder.com/400x250/022A4D/FFFFFF?text=Sample+Screenshot" alt="Sample Screenshot" class="screenshot-image">
+                            <img src="assets/pentest-report-1.jpg" alt="Pentest Screenshot 1" class="screenshot-image">
                             <div class="screenshot-description">
-                                <h4>Screenshot Title</h4>
-                                <p>Add a brief description of what this screenshot shows. Explain the key features, findings, or processes demonstrated in the image. Replace the sample image with your actual screenshot.</p>
+                                <h4>OS Command Injection</h4>
+                                <p>The <i>Export</i> page allowed injection of bash commands directly into the URL, granting access to sensitive files. The screenshot shows the successful execution of a payload that retrieved the <code>/etc/passwd</code> file — something that should only be accessible to root or privileged users.</p>
                             </div>
                         </div>
                         
                         <div class="screenshot-item">
-                            <img src="https://via.placeholder.com/400x250/555555/FFFFFF?text=Add+Your+Screenshot" alt="Screenshot Placeholder" class="screenshot-image">
+                            <img src="assets/pentest-report-2.jpg" alt="Pentest Screenshot 2" class="screenshot-image">
                             <div class="screenshot-description">
-                                <h4>Screenshot Title</h4>
-                                <p>Add a brief description of what this screenshot shows. Explain the key features, findings, or processes demonstrated in the image. Replace the sample image with your actual screenshot.</p>
+                                <h4>Cross-Site Scripting (XSS)</h4>
+                                <p>Both input fields on the <i>Contact</i> page were vulnerable to stored cross-site scripting. Injecting simple JavaScript payloads triggered popups, confirming that user inputs were not properly sanitized. The screenshot shows the alert messages executing in the browser.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail-section" id="containerized-web-stack-detail" style="display: none;">
+        <div class="project-detail-container">
+            <div class="project-header">
+                <button class="back-button-small" onclick="showProjects()">
+                    <span>←</span> BACK TO PROJECTS
+                </button>
+                <h1 class="project-detail-title">CONTAINERIZED WEB STACK</h1>
+                <div class="project-detail-subtitle">Scalable Infrastructure Solution</div>
+            </div>
+            
+            <div class="project-content-wrapper">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <div class="overview-text">
+                        <p><b>Summary</b><br>
+                        This project took place within the framework of the <b>Linux Web Services</b> course at Thomas More Geel. For my individual assignment, I created both a document and a video demonstrating the process of setting up a <b>LAMP stack using Docker</b>. The task required me to craft a <b>Dockerfile</b> and <b>docker-compose.yaml</b> file to orchestrate the deployment. To enhance my coding process and deepen my understanding of containerization, I employed <b>Generative AI</b> as a supportive tool.</p>
+
+                        <p>The primary objective was to establish, at minimum, an <b>Apache2 container</b> serving a webpage and another container running <b>MySQL</b>. I decided to extend my efforts for potential extra credits by incorporating additional containers, depending on the approach taken.</p>
+
+                        <p>For the Apache container, I developed a <b>custom image</b> based on Ubuntu 22.04, with Apache2 pre-installed. The MySQL container was configured to connect to a database containing a single record with my full name, utilizing a publicly available image.</p>
+
+                        <p><b>Data Management and Initialization</b><br>
+                        Upon running the containers, a webpage displaying <i>“&lt;Student name&gt; has reached Milestone 1!!”</i> became accessible on my Linux server at port 8085. The webpage dynamically fetched my name from the MySQL database. Notably, the data persisted across container removals and stack restarts, as evidenced by a short video demonstration.</p>
+
+                        <p>To earn bonus points, I implemented <b>horizontal scaling</b> techniques for load balancing web traffic between multiple Apache containers. This involved printing the hostname of each container to the webpage to verify load balancing functionality, supported by an additional video proof.</p>
+
+                        <p>Adhering to the assignment rules, I utilized <b>Generative AI</b> throughout the process, documenting every prompt and response. My document featured a professional layout, inclusive of a comprehensive introduction, step-by-step procedures, and a reflective conclusion. Furthermore, I explained each line of the <b>Dockerfile</b> and <b>docker-compose.yaml</b> file, ensuring clarity regarding parameters and options chosen.</p>
+
+                        <p><b>What did I learn?</b><br>
+                        Throughout this project, I acquired essential technical skills in <b>Docker</b>, allowing me to configure containers for a <b>LAMP stack</b>. Integrating Generative AI as a supportive tool not only enhanced my code optimization abilities but also deepened my understanding of containerization concepts. I learned the importance of ensuring <b>data persistence</b> within containers, especially regarding MySQL databases, and successfully implemented <b>horizontal scaling</b> techniques for load balancing web traffic, emphasizing scalability.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">LAMP</span>
+                            <span class="tech-tag highlighted">NGINX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-section">
+                        <h3>Project Files</h3>
+                        <button class="download-button" onclick="downloadFile('annotated-Milestone_1-Linux_Webservices-2CCS01-Baisangur-Dudayev-1.pdf')">
+                            📄 View Project Report (NL)
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="screenshots-section">
+                    <h2>Project Screenshots</h2>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/docker-1.jpg" alt="Docker Setup" class="screenshot-image">
+                            <div class="screenshot-description">
+                                <h4>Docker Containers Running</h4>
+                                <p>This screenshot shows the Apache and MySQL containers successfully deployed on my Linux server using Docker.</p>
                             </div>
                         </div>
                         
                         <div class="screenshot-item">
-                            <img src="https://via.placeholder.com/400x250/022A4D/FFFFFF?text=Your+Screenshot+Here" alt="Screenshot Placeholder" class="screenshot-image">
+                            <img src="assets/docker-2.jpg" alt="NGINX Configuration" class="screenshot-image">
                             <div class="screenshot-description">
-                                <h4>Screenshot Title</h4>
-                                <p>Add a brief description of what this screenshot shows. Explain the key features, findings, or processes demonstrated in the image. Replace the sample image with your actual screenshot.</p>
+                                <h4>Webpage Output</h4>
+                                <p>This screenshot demonstrates the webpage running in the browser, dynamically fetching data from the MySQL database and confirming successful container integration.</p>
                             </div>
                         </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail-section" id="aws-gitlab-hosting-detail" style="display: none;">
+        <div class="project-detail-container">
+            <div class="project-header">
+                <button class="back-button-small" onclick="showProjects()">
+                    <span>←</span> BACK TO PROJECTS
+                </button>
+                <h1 class="project-detail-title">AWS/GITLAB APP HOSTING</h1>
+                <div class="project-detail-subtitle">Cloud-Native CI/CD Pipeline</div>
+            </div>
+            
+            <div class="project-content-wrapper">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <div class="overview-text">
+                        <p><b>Summary</b><br>
+                            For this group project in the course <b>Project 4.0</b>, my team and I had to build a weather application designed specifically for farmers. The app allowed them to register their crops, track weather conditions, and submit insurance claims in case of damage. Our team was made up of students from three different specializations: <b>App Development</b>, <b>Artificial Intelligence</b>, and <b>Cloud & Cybersecurity</b>. I was the only student representing the Cloud & Cybersecurity track.</p>
+
+                            <p><b>My Responsibility</b><br>
+                            My main responsibility was setting up the <b>cloud infrastructure</b> and ensuring the project was secure and automated. I created multiple GitLab repositories for the developers and implemented <b>CI/CD pipelines</b> that built Docker images of their code and deployed them automatically to <b>AWS</b>. This was all done using the <b>AWS CLI</b> directly inside the GitLab pipelines. I also made adjustments in the developers’ code when needed, particularly to ensure Docker containers communicated properly and everything ran smoothly together. This required me to keep a bird’s-eye view of the project so that all parts integrated seamlessly.</p>
+
+                            <p><b>Infrastructure as Code</b><br>
+                            The infrastructure itself was fully automated. From setting up <b>VPCs, subnets, and EC2 instances</b>, to configuring <b>security groups</b> and <b>Elastic IPs</b>, everything was handled through code. To give the team flexibility, I included <b>manual triggers</b> in the pipelines so we could choose when to run specific stages (e.g., setup, testing, cleanup). I was also responsible for managing and submitting all project documentation, ensuring everything met the school’s formatting and content guidelines.</p>
+
+                            <p><b>Pipelines</b><br>
+                            We structured our CI/CD around three main repositories: <b>Frontend</b>, <b>Backend</b>, and <b>Infrastructure</b>, each with its own <code>.gitlab-ci.yml</code> pipeline file. All pipelines included the directive <code>when: manual</code>, allowing us to decide which stages to run and when.</p>
+
+                            <p><b>Infrastructure Pipeline</b><br>
+                            The infrastructure pipeline contained five main stages:<br>
+                            – <b>Setup Infrastructure Environment</b><br>
+                            – <b>Setup EC2 Instance</b><br>
+                            – <b>Test Infrastructure</b><br>
+                            – <b>Cleanup EC2 Instance</b><br>
+                            – <b>Cleanup Infrastructure Environment</b></p>
+
+                            <p>In the <b>Setup Infrastructure Environment</b> stage, core resources were created, such as:<br>
+                            – <b>ECR repositories</b> (to store Docker images built by the other pipelines)<br>
+                            – <b>VPC (10.0.0.0/16)</b> with public and private subnets, NAT gateway, and route tables<br>
+                            – <b>Security groups</b> allowing HTTP(80), HTTPS(443), SSH(22), Angular(4200), FastAPI(8000), and MongoDB(27017)<br>
+                            – <b>S3 bucket</b> to store artifacts like <code>docker-compose.yml</code>, SSH key pairs, and metadata files</p>
+
+                            <p>During the <b>Setup EC2 Instance</b> stage, the pipeline provisioned an EC2 server with Elastic IPs, extended its root disk to 16 GB, mounted additional EBS volumes for database data, installed Docker, and pulled down configuration files from S3. This allowed the containers to run persistently with data mounted to volumes.</p>
+
+                            <p>The <b>Test Infrastructure</b> stage validated that resources like subnets, security groups, and Elastic IPs were properly set up. Finally, the <b>Cleanup</b> stages destroyed the resources in reverse order to ensure no unnecessary costs.</p>
+
+                            <p><b>Frontend & Backend Pipelines</b><br>
+                            The frontend and backend pipelines were similar, with extra <b>dependencies</b> and <b>quality</b> stages for the frontend to run <code>npm tests</code>. Both pipelines included:<br>
+                            – <b>Build</b>: Installed Docker Compose, retrieved SSL certificates from S3, built Docker images, and pushed them to AWS ECR.<br>
+                            – <b>Deploy</b>: Retrieved artifacts and SSH keys, connected to the EC2 instance, stopped old containers, pulled the new images from ECR, and restarted them.</p>
+
+                            <p><b>Docker Setup</b><br>
+                            The infrastructure repository contained the <code>docker-compose.yml</code>, which defined three main containers: frontend (Angular on port 4200), backend (FastAPI on port 8000), and database (MongoDB on port 27017). The backend’s Dockerfile used Python 3.9 with FastAPI and pymongo, while the frontend used a multi-stage build (Node.js to compile Angular, then served by Nginx).</p>
+
+                            <p><b>Outcome</b><br>
+                            In the end, the project was a success. The developers could focus on their part without worrying about infrastructure issues, and I learned a lot about <b>cloud automation</b>, <b>infrastructure as code</b>, teamwork, and cross-disciplinary collaboration. I also experienced firsthand how valuable it is to take ownership of the entire infrastructure and make sure every component works as a unified system.</p>
+
+                            <p><b>What did I learn?</b><br>
+                            This project taught me what it really means to take ownership of infrastructure in a team setting. I didn’t just automate a few tasks, I built and managed the entire cloud environment from scratch, and I had to think several steps ahead to keep everything working together. It was the first time I truly experienced how valuable <b>Infrastructure as Code</b> is, and how much time and frustration it saves when done right.</p>
+
+                            <p>I also learned how important it is to communicate clearly with teammates from different backgrounds. The developers weren’t always familiar with cloud tooling or containerization, so I had to explain certain decisions in a way that made sense to them. That improved my ability to <b>translate complex technical topics</b> into practical insights for others.</p>
+
+                            <p>Something I didn’t expect going in was how often I had to troubleshoot problems that weren’t technically “mine.” But instead of saying “that’s not my responsibility,” I took initiative and made sure everything worked as one system, even if that meant diving into unfamiliar code. That mindset shift—from doing my own part to <b>actively owning the project’s stability</b>—is probably the most valuable thing I took away.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">AWS CLI</span>
+                            <span class="tech-tag">GitLab Pipelines</span>
+                            <span class="tech-tag">Docker Compose</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-section">
+                        <h3>Project Files</h3>
+                        <button class="download-button" onclick="downloadFile('Documentatie AgroShield.pdf')">
+                            📄 View Project Documentation (NL)
+                        </button>
+                        <button class="download-button secondary" onclick="window.open('https://www.youtube.com/watch?v=qjXTgkKo3FA', '_blank')">
+                            🎥 Watch Promotional Video
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="screenshots-section">
+                    <h2>Project Screenshots</h2>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/Agroshield-1.png" alt="AWS Console" class="screenshot-image">
+                            <div class="screenshot-description">
+                                <h4>Frontend Application</h4>
+                                <p>Screenshot of the farmer weather application’s frontend (Angular), developed by teammates, which I hosted and deployed via Docker and AWS.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="screenshot-item">
+                            <img src="assets/Agroshield-2.png" alt="GitLab Pipeline" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>Infrastructure Diagram</h4>
+                                <p>Architecture diagram showing my infrastructure design: VPC with public/private subnets, EC2 instance with Elastic IP, ECR repositories, S3 storage, NAT Gateway, and security groups.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="screenshot-item">
+                            <img src="assets/Agroshield-3.png" alt="Deployed Application" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>GitLab CI Pipeline Stages</h4>
+                                <p>Screenshot of the main <code>.gitlab-ci.yml</code> stages, demonstrating automated setup, deployment, testing, and cleanup for the infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-item">
+                            <img src="assets/Agroshield-4.png" alt="Deployed Application" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>Docker Compose Configuration</h4>
+                                <p>Excerpt from a <code>docker-compose.yml</code> file, defining the containers (frontend, backend, MongoDB) and retrieving images from AWS Elastic Container Registry.</p>
+                            </div>
+                        </div>
+
+                         <div class="screenshot-item">
+                            <img src="assets/Agroshield-5.png" alt="Deployed Application" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>Docker Compose Configuration</h4>
+                                <p>Screenshot of the four GitLab repositories used in the project.  
+                                I created and maintained the infrastructure repo's, but also contributed to the others by writing <code>gitlab-ci.yml</code> files, Docker Compose definitions, and making necessary code changes to ensure the developers’ code worked with the automated deployment.  
+                                As repository owner, I also set permissions carefully, giving developers only the rights they needed, ensuring security and stability of the shared environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail-section" id="gps-pupil-tracker-detail" style="display: none;">
+        <div class="project-detail-container">
+            <div class="project-header">
+                <button class="back-button-small" onclick="showProjects()">
+                    <span>←</span> BACK TO PROJECTS
+                </button>
+                <h1 class="project-detail-title">GPS PUPIL TRACKER</h1>
+                <div class="project-detail-subtitle">IoT Location Tracking System</div>
+            </div>
+            
+            <div class="project-content-wrapper">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <div class="overview-text">
+                        <p><b>Overview</b><br>
+                        This project took place within the framework of the <b>Systems Engineering & Analysis (based on Prince2)</b> course at Thomas More Geel. It involved collaboration with 5 of my classmates. We had to create a <b>proof of concept</b> with the aim of developing an IoT device and application that could track children for a teacher or supervisor. The user (teacher) can define a zone where the children must stay within, and in case a child leaves the zone, both the teacher and the child should receive a notification.</p>
+
+                        <p>Additionally, <b>emergency buttons</b> had to be provided for both the teacher and the child. Furthermore, everything had to be safe and user-friendly. We accomplished this project by utilizing an <b>ESP32</b>, a <b>Firebase database</b>, and a <b>hosted site</b> that interacts with the database. The choice of this project stemmed from the desire to explore and understand the <b>Scrum process model</b>. It is important to note that our team successfully managed to implement all the <b>must-haves</b> and <b>should-haves</b>, as requested by the client.</p>
+
+
+                        <p><b>My Contributions</b><br>
+                        My focus was on perfecting and implementing the <b>JavaScript code</b> that seamlessly interacts with the back-end. This task involved not only writing structured and efficient code but also implementing <b>visual enhancements in the User Interface</b> to optimize the overall user experience.</p>
+
+                        <p><b>What did I learn?</b><br>
+                        I gained valuable experience working in an <b>agile (Scrum)</b> team environment. This project allowed me to enhance my <b>soft skills</b> such as communication, teamwork, and adaptability. Furthermore, I gained a deeper understanding of how complex project components are developed, interact with each other, and ultimately come to fruition. My focus on perfecting and implementing JavaScript code for the project's user interface not only honed my technical skills but also emphasized the importance of <b>user-centric design</b> in creating a safe and user-friendly solution.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Agile (SCRUM)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-section">
+                        <h3>Project Files</h3>
+                        <p><i>This document was created as preparation for the project week itself, during which we built the system, and was not a report that had to be delivered at the end.</i></p>
+                        <button class="download-button" onclick="downloadFile('annotated-Rapport_PoC_kr1.pdf')">
+                            📄 View Proof of Concept (NL)
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="screenshots-section">
+                    <h2>Project Screenshots</h2>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/tracker-1.png" alt="ESP32 Hardware" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>Application Interface</h4>
+                                <p>Screenshot of the application’s interface, showing the <b>map</b> and <b>interactive buttons</b> connected to the Firebase database and ESP32 device. This interface allowed the us to track the ESP32's location in real time and use the emergency buttons when needed.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail-section" id="hosting-project-detail" style="display: none;">
+        <div class="project-detail-container">
+            <div class="project-header">
+                <button class="back-button-small" onclick="showProjects()">
+                    <span>←</span> BACK TO PROJECTS
+                </button>
+                <h1 class="project-detail-title">HOSTING PROJECT</h1>
+                <div class="project-detail-subtitle">Enterprise Infrastructure Setup</div>
+            </div>
+            
+            <div class="project-content-wrapper">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <div class="overview-text">
+                        <p><b>Summary</b><br>
+                        This project took place within the framework of the <b>Project Hosting</b> and <b>Network & OS Security</b> courses at Thomas More. In our group project, we took on the challenge of creating a robust hosting platform tailored for MySQL applications, all managed through an intuitive API interface. This endeavor required us to dive deep into the complexities of IT infrastructure and technology integration.</p>
+
+                        <p>Our project involved setting up and fine-tuning essential components like <b>servers, storage systems, switches, fiber switches, and firewalls</b>. Moreover, we implemented <b>VMware vSphere</b> to establish a cluster environment, ensuring our hosting infrastructure could scale and remain resilient. <b>Security</b> was a top priority, leading us to incorporate <b>pfSense firewall solutions</b> and <b>OpenVPN</b> for fortified network protection.</p>
+
+                        <p>But our project wasn’t just about the technical backend. We also developed a user-friendly website with advanced hosting capabilities utilising <b>container orchestration</b>. This platform served as the gateway for users to configure and deploy their applications seamlessly.</p>
+
+                        <p><b>My Role</b><br>
+                        In our project, I was actively involved in several key areas. Firstly, I played a role in the <b>physical setup phase</b>, helping ensure that our infrastructure was configured and deployed effectively. Additionally, I explored methods to <b>orchestrate containers</b> efficiently, contributing insights and strategies to enhance our platform's capabilities.</p>
+
+                        <p>Furthermore, my involvement extended to helping with the <b>deployment of VMware vSphere</b>. Throughout the project, I maintained a proactive approach, consistently seeking opportunities to contribute and add value. My dedication to staying engaged and proactive reflected my commitment to the project's success, as I continually strived to make meaningful contributions and drive progress.</p>
+
+                        <p><b>What did I learn?</b><br>
+                        Throughout this project, I gained a much deeper understanding of how complex IT infrastructure comes together in a real-world scenario. Setting up the <b>physical components</b> gave me hands-on experience with the hardware side of hosting, something I hadn’t worked with in such depth before. Working with <b>container orchestration</b> taught me how important planning and structure was when designing scalable solutions. I also learned a lot by diving into <b>VMware vSphere</b>, not just how to deploy it, but how it fit into a broader ecosystem.</p>
+
+                        <p>Beyond the technical aspects, this project highlighted the importance of <b>teamwork</b>. Collaborating closely with my peers taught me how to communicate clearly, divide responsibilities effectively, and adapt to different working styles. Solving problems together helped build trust in the team and pushed me to think from different perspectives. It made me realize how essential collaboration was in delivering a successful and well-rounded result.</p>
+                    </div>
+                                        
+                    <div class="tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-list">
+                            <span class="tech-tag">vSphere</span>
+                            <span class="tech-tag">pfSense</span>
+                            <span class="tech-tag">Container Orchestration</span>
+                            <span class="tech-tag">Physical Server Setup</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-section">
+                        <h3>Project Files</h3>
+                        <button class="download-button" onclick="downloadFile('annotated-Technisch-Rapport.pdf')">
+                            📄 Download Technical Report (NL)
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="screenshots-section">
+                    <h2>Project Screenshots</h2>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="assets/hosting-1.png" alt="vSphere Console" class="screenshot-image" style="width: auto; height: auto; max-width: 100%;">
+                            <div class="screenshot-description">
+                                <h4>Physical Hosting Setup</h4>
+                                <p>Photograph of the physical infrastructure I helped build, including servers, switches, and firewalls. This hardware setup formed the foundation on which we hosted the project’s MySQL applications, VMware vSphere cluster, and containerized services.</p>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1638,61 +1994,76 @@
             </div>
             
             <div class="about-content">
-                <div class="about-profile">
-                    <div class="profile-image-container">
-                        <img src="https://via.placeholder.com/200x200/022A4D/FFFFFF?text=Your+Photo" alt="Baisangur Dudayev" class="profile-image">
-                        <div class="profile-glow"></div>
-                    </div>
-                    <div class="profile-text">
-                        <h2>Baisangur Dudayev</h2>
-                        <h3>Cybersecurity Professional</h3>
-                        <p>Passionate cybersecurity specialist with expertise in penetration testing, vulnerability assessment, and secure infrastructure development. Dedicated to protecting digital assets and maintaining robust security postures through innovative solutions and industry best practices.</p>
-                        <p>With hands-on experience in both offensive and defensive security, I specialize in identifying vulnerabilities, implementing security controls, and developing secure applications that meet enterprise-grade standards.</p>
-                    </div>
+            <div class="about-profile">
+                <div class="profile-image-container">
+                    <img src="assets/Baisangur-Dudayev-Photo.jpg" alt="Baisangur Dudayev" class="profile-image">
+                    <div class="profile-glow"></div>
                 </div>
-                
-                <div class="about-sections">
-                    <div class="about-card">
-                        <h3>🛡️ Expertise</h3>
-                        <ul>
-                            <li>Penetration Testing & Vulnerability Assessment</li>
-                            <li>Network Security & Infrastructure</li>
-                            <li>Container Technologies & DevSecOps</li>
-                            <li>Cloud Security (AWS)</li>
-                            <li>OWASP Security Standards</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="about-card">
-                        <h3>🎓 Education & Certifications</h3>
-                        <ul>
-                            <li>Cybersecurity Degree/Certification</li>
-                            <li>OWASP Training</li>
-                            <li>AWS Cloud Practitioner</li>
-                            <li>Docker & Container Technologies</li>
-                            <li>Agile/SCRUM Methodologies</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="about-card">
-                        <h3>💼 Professional Skills</h3>
-                        <ul>
-                            <li>BurpSuite, Manual Testing</li>
-                            <li>Docker, NGINX, LAMP Stack</li>
-                            <li>AWS CLI, GitLab CI/CD</li>
-                            <li>vSphere, pfSense</li>
-                            <li>JavaScript, ESP32, Firebase</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="cv-download">
-                    <h2>Download My CV</h2>
-                    <button class="download-button" onclick="downloadFile('Baisangur Dudayev.pdf')">
-                        📄 Download CV (PDF)
-                    </button>
+                <div class="profile-text">
+                    <h2>Baisangur Dudayev</h2>
+                    <h3>Cloud & Cybersecurity Student</h3>
+                    <p>I am a final-year <strong>Cloud & Cybersecurity student</strong> with a strong interest in both offensive and defensive security. My curiosity about how technology works — and how it can be broken and secured — led me to specialise in areas such as penetration testing, cloud security, and SOC operations.</p>
+                    <p>Outside of my studies, I dedicate time to <strong>self-study</strong> and regularly follow security feeds to stay up to date with the latest threats and vulnerabilities. When I’m not behind a screen, I spend time in the <strong>gym</strong> to stay disciplined and balanced, and my <strong>faith</strong> keeps me grounded and focused.</p>
+                    <p>I enjoy projects where I can combine hands-on technical work with meaningful outcomes. My long-term goal is to grow further in both <strong>red-team and blue-team disciplines</strong>, from penetration testing and incident response to building secure infrastructure and automation workflows.</p>
                 </div>
             </div>
+            
+            <div class="about-sections">
+                <div class="about-card">
+                    <h3>🛡️ Expertise</h3>
+                    <ul>
+                        <li>SOC & SIEM Operations (Elasticsearch, Logstash, Kibana, Grafana)</li>
+                        <li>Automation & Infrastructure as Code (Ansible, n8n, Python)</li>
+                        <li>Security Reporting & Analysis (Guardian360, custom pipelines)</li>
+                        <li>Network & Infrastructure Security (pfSense, VMware ESXi, Active Directory)</li>
+                        <li>Cloud Security (AWS & Azure, IAM, containers, DevSecOps)</li>
+                        <li>Penetration Testing & Vulnerability Assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="about-card">
+                    <h3>💼 Technical Skills</h3>
+                    <ul>
+                        <li><strong>Programming & Scripting:</strong> Python, Bash, JavaScript</li>
+                        <li><strong>Security Tools:</strong> Burp Suite, OWASP ZAP, Wireshark, Nmap</li>
+                        <li><strong>Systems & Infrastructure:</strong> Docker, Nginx, pfSense, VMware, Linux</li>
+                        <li><strong>Cloud & DevOps:</strong> AWS (EC2, S3, IAM, ECR), Azure basics, GitLab CI/CD, WSL</li>
+                        <li><strong>Reporting & Automation:</strong> Jinja templating, custom report generation</li>
+                    </ul>
+                </div>
+                
+                <div class="about-card">
+                    <h3>🎓 Education</h3>
+                    <ul>
+                        <li><strong>Electronics-ICT: Bachelor of Cloud & Cybersecurity</strong> (2022–2025, ongoing) – Thomas More University of Applied Sciences</li>
+                        <li>ICT – Secondary Education (2020–2022) – Koninklijk Atheneum Geel</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h3>🌍 Languages</h3>
+                    <ul>
+                        <li>Dutch (native)</li>
+                        <li>English (fluent)</li>
+                    </ul>
+                </div>
+                
+                <div class="about-card">
+                    <h3>📫 Contact</h3>
+                    <ul>
+                        <li>Email: <a href="mailto:DBaisangur@Outlook.com">DBaisangur@Outlook.com</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/baisangur-dudayev" target="_blank">https://www.linkedin.com/in/baisangur-dudayev</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cv-download">
+                <h2>Curriculum Vitae</h2>
+                <button class="download-button" onclick="window.open('assets/CV-Baisangur-Dudayev.pdf', '_blank')">
+                    📄 View CV
+                </button>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -1708,54 +2079,60 @@
             
             <div class="internship-content">
                 <div class="internship-intro">
-                    <h2>Professional Development</h2>
-                    <p>During my internship experience, I gained hands-on expertise in cybersecurity practices, infrastructure management, and secure development workflows. Below are the key documents and reports from my internship journey.</p>
+                    <h2>Internship at Netcure – Cybersecurity SOC Project</h2>
+                    <p>During my 13-week internship at Netcure, I contributed to the design and implementation of a Security Operations Center (SOC). This included building a SIEM for log aggregation, automation workflows with n8n, incident response integration with TheHive, and automated reporting based on Guardian360 and CyberAlarm data.</p>
+                    <p>Below you can find the core documents from my internship:</p>
                 </div>
                 
                 <div class="documents-grid">
                     <div class="document-card">
                         <div class="document-icon">📋</div>
                         <h3>Project Plan</h3>
-                        <p>Initial planning document outlining internship objectives, methodologies, and implementation strategies developed at the start of the program.</p>
-                        <button class="download-button" onclick="downloadFile('Project_Plan.pdf')">
-                            📄 Download Plan
+                        <p>Initial planning document outlining objectives, timelines, methodologies, and deliverables at the start of the internship.</p>
+                        <button class="download-button" onclick="downloadFile('Netcure SOC Project - Project Plan.pdf')">
+                            📄 View Project Plan
                         </button>
                     </div>
                     
                     <div class="document-card">
                         <div class="document-icon">⚙️</div>
                         <h3>Realization Report</h3>
-                        <p>Comprehensive technical documentation detailing the implementation, development processes, and technical achievements during the internship project.</p>
-                        <button class="download-button" onclick="downloadFile('Realization_Report.pdf')">
-                            📄 Download Report
+                        <p>Comprehensive technical documentation of the SOC build, covering SIEM setup, automation, reporting, and incident management integration.</p>
+                        <button class="download-button" onclick="downloadFile('Netcure SOC Project - Realization Report.pdf')">
+                            📄 View Realization Report
                         </button>
                     </div>
                     
                     <div class="document-card">
                         <div class="document-icon">📖</div>
                         <h3>Internship Journal</h3>
-                        <p>Daily diary documenting day-to-day activities, learning experiences, challenges faced, and progress made throughout the internship period.</p>
-                        <button class="download-button" onclick="downloadFile('Internship_Journal.pdf')">
-                            📄 Download Journal
+                        <p>Day-by-day log of activities, challenges, and lessons learned during the internship.</p>
+                        <button class="download-button" onclick="downloadFile('Netcure SOC Project - Internship Journal.pdf')">
+                            📄 View Internship Journal
                         </button>
                     </div>
                     
                     <div class="document-card">
                         <div class="document-icon">💭</div>
                         <h3>Personal Reflection</h3>
-                        <p>Reflective analysis of the internship experience, personal growth, skills developed, and insights gained during the professional development journey.</p>
-                        <button class="download-button" onclick="downloadFile('Personal_Reflection.pdf')">
-                            📄 Download Reflection
+                        <p>Personal reflection on my learning process, teamwork, and professional development throughout the internship.</p>
+                        <button class="download-button" onclick="downloadFile('Netcure SOC Project - Personal Reflection.pdf')">
+                            📄 View Reflection
                         </button>
                     </div>
                     
                     <div class="document-card">
                         <div class="document-icon">🛡️</div>
                         <h3>Redacted Guardian360 Report</h3>
-                        <p>Automated security report generated by custom script analyzing system logs. This redacted version demonstrates advanced log analysis and reporting capabilities.</p>
-                        <button class="download-button" onclick="downloadFile('Guardian360_Report_Redacted.pdf')">
-                            📄 Download Report
-                        </button>
+                        <p>Sample client-facing report generated by my automated reporting script. This redacted version demonstrates the structure, automated formatting, and visualizations, with sensitive data replaced or removed.</p>
+                        <div class="download-buttons-group">
+                            <button class="download-button" onclick="downloadFile('Guardian360 report - company_Redacted - scannerplatform_Redacted - en.pdf')">
+                                📄 View PDF Version
+                            </button>
+                            <button class="download-button secondary" onclick="downloadFile('Guardian360 report - company_Redacted - scannerplatform_Redacted - en.html')">
+                                🌐 View HTML Version
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1775,6 +2152,7 @@
                             <span class="tech-tag">BurpSuite</span>
                             <span class="tech-tag highlighted">Manual Testing</span>
                             <span class="tech-tag highlighted">OWASP</span>
+                            <span class="tech-tag highlighted">Kali</span>
                         </div>
                     </div>
                     <div class="project-lightning"></div>
@@ -1846,18 +2224,24 @@
             </div>
             
             <button class="back-button" onclick="showHome()">
-                <span>←</span> RETURN TO BASE
+                <span>←</span> RETURN TO HOME
             </button>
         </div>
     </section>
     
     <footer>
         <div class="footer-content">
-            <a href="https://linkedin.com/in/Baisangur Dudayev" class="social-link">
-                🔗 LinkedIn
+            <a href="https://www.linkedin.com/in/baisangur-dudayev" class="social-link" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
             </a>
-            <a href="https://tryhackme.com/p/Baisangur Dudayev" class="social-link">
-                🎯 TryHackMe
+            <a href="https://tryhackme.com/p/L1cht" class="social-link" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5 4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.762a3.273 3.273 0 0 1-3.27-3.27 3.273 3.273 0 0 1 3.27-3.27c.059 0 .115.014.174.017a.625.625 0 0 0 .547-.447C6.16 3.827 8.282 1.25 10.705 1.25a4.525 4.525 0 0 1 4.52 4.52v.21a.625.625 0 0 0 .625.624h.208a3.273 3.273 0 0 1 3.27 3.27 3.273 3.273 0 0 1-3.27 3.27h-4.687a.625.625 0 1 0 0 1.25h4.687a4.525 4.525 0 0 0 4.52-4.52 4.525 4.525 0 0 0-4.52-4.52h-.208v-.21A5.775 5.775 0 0 0 10.705 0zM9.492 17.739a.625.625 0 0 0-.884.884l1.116 1.116a.625.625 0 0 0 .884 0l2.5-2.5a.625.625 0 1 0-.884-.884L10.5 18.079l-.124-.124a.625.625 0 0 0-.884 0z"/>
+                </svg>
+                TryHackMe
             </a>
         </div>
     </footer>
@@ -1866,15 +2250,15 @@
         // Dynamic titles
         const titles = [
             "Cybersecurity Professional",
-            "Ethical Hacker",
-            "Digital Guardian",
             "Security Analyst",
+            "SIEM Engineer",
             "Penetration Tester",
-            "Threat Hunter",
-            "SOC Specialist",
-            "Security Architect",
-            "Digital Warrior",
-            "Cyber Defender"
+            "Network & Security Engineer",
+            "Cloud Security Engineer (AWS & Azure)",
+            "Linux & Docker Specialist",
+            "DevSecOps Engineer",
+            "VMware & Virtualization Engineer",
+            "Security Automation Developer"
         ];
         
         let titleIndex = 0;
@@ -1898,11 +2282,6 @@
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            
-            // Update cursor
-            const cursor = document.querySelector('.cursor');
-            cursor.style.left = mouseX - 10 + 'px';
-            cursor.style.top = mouseY - 10 + 'px';
         });
         
         // Lightning generation
@@ -1932,22 +2311,11 @@
             return;
         }
         
-        // Power surge effect
+        // Power surge effect (keep for project cards)
         function triggerPowerSurge() {
             // Create multiple lightning strikes
             for (let i = 0; i < 5; i++) {
                 setTimeout(() => createLightning(), i * 100);
-            }
-            
-            // Create judgement cuts around the mouse
-            for (let i = 0; i < 8; i++) {
-                setTimeout(() => {
-                    const angle = (i * 45) * Math.PI / 180;
-                    const radius = 100;
-                    const x = mouseX + Math.cos(angle) * radius;
-                    const y = mouseY + Math.sin(angle) * radius;
-                    createJudgementCut(x, y);
-                }, i * 50);
             }
             
             // Screen flash effect
@@ -1964,14 +2332,8 @@
             }
         }, 2000);
         
-        // Initialize cursor
-        document.addEventListener('mouseenter', () => {
-            document.querySelector('.cursor').style.opacity = '1';
-        });
-        
-        document.addEventListener('mouseleave', () => {
-            document.querySelector('.cursor').style.opacity = '0';
-        });
+        // Initialize removed cursor functionality
+        // Cursor removed for better performance
         
         // Create floating particles
         function createParticles() {
@@ -2100,15 +2462,18 @@
         function showProjects() {
             const homeSection = document.getElementById('home-section');
             const projectsSection = document.getElementById('projects-section');
-            const projectDetailSection = document.getElementById('project-detail-section');
             const aboutSection = document.getElementById('about-section');
             const internshipSection = document.getElementById('internship-section');
             
-            // Hide all other sections
+            // Hide all other sections including all project details
             homeSection.style.display = 'none';
-            projectDetailSection.style.display = 'none';
             aboutSection.style.display = 'none';
             internshipSection.style.display = 'none';
+            
+            const allProjectDetails = document.querySelectorAll('.project-detail-section');
+            allProjectDetails.forEach(section => {
+                section.style.display = 'none';
+            });
             
             // Show projects
             projectsSection.style.display = 'block';
@@ -2118,15 +2483,24 @@
         function showHome() {
             const homeSection = document.getElementById('home-section');
             const projectsSection = document.getElementById('projects-section');
-            const projectDetailSection = document.getElementById('project-detail-section');
             const aboutSection = document.getElementById('about-section');
             const internshipSection = document.getElementById('internship-section');
             
-            // Hide all other sections
+            // Hide all other sections including all project details
             projectsSection.style.display = 'none';
-            projectDetailSection.style.display = 'none';
             aboutSection.style.display = 'none';
             internshipSection.style.display = 'none';
+            
+            const allProjectDetails = document.querySelectorAll('.project-detail-section');
+            allProjectDetails.forEach(section => {
+                section.style.display = 'none';
+                section.classList.remove('fade-in');
+            });
+            
+            // Remove any fade classes from other sections
+            projectsSection.classList.remove('fade-in');
+            aboutSection.classList.remove('fade-in');
+            internshipSection.classList.remove('fade-in');
             
             // Show home
             homeSection.style.display = 'flex';
@@ -2137,15 +2511,18 @@
         function showAbout() {
             const homeSection = document.getElementById('home-section');
             const projectsSection = document.getElementById('projects-section');
-            const projectDetailSection = document.getElementById('project-detail-section');
             const aboutSection = document.getElementById('about-section');
             const internshipSection = document.getElementById('internship-section');
             
-            // Hide all other sections
+            // Hide all other sections including all project details
             homeSection.style.display = 'none';
             projectsSection.style.display = 'none';
-            projectDetailSection.style.display = 'none';
             internshipSection.style.display = 'none';
+            
+            const allProjectDetails = document.querySelectorAll('.project-detail-section');
+            allProjectDetails.forEach(section => {
+                section.style.display = 'none';
+            });
             
             // Show about
             aboutSection.style.display = 'block';
@@ -2155,15 +2532,18 @@
         function showInternship() {
             const homeSection = document.getElementById('home-section');
             const projectsSection = document.getElementById('projects-section');
-            const projectDetailSection = document.getElementById('project-detail-section');
             const aboutSection = document.getElementById('about-section');
             const internshipSection = document.getElementById('internship-section');
             
-            // Hide all other sections
+            // Hide all other sections including all project details
             homeSection.style.display = 'none';
             projectsSection.style.display = 'none';
-            projectDetailSection.style.display = 'none';
             aboutSection.style.display = 'none';
+            
+            const allProjectDetails = document.querySelectorAll('.project-detail-section');
+            allProjectDetails.forEach(section => {
+                section.style.display = 'none';
+            });
             
             // Show internship
             internshipSection.style.display = 'block';
@@ -2172,60 +2552,47 @@
         
         function showProjectDetail(projectId) {
             const projectsSection = document.getElementById('projects-section');
-            const projectDetailSection = document.getElementById('project-detail-section');
+            const homeSection = document.getElementById('home-section');
+            const aboutSection = document.getElementById('about-section');
+            const internshipSection = document.getElementById('internship-section');
+            
+            // Hide all other sections
+            homeSection.style.display = 'none';
+            aboutSection.style.display = 'none';
+            internshipSection.style.display = 'none';
+            
+            // Hide all project detail sections
+            const allProjectDetails = document.querySelectorAll('.project-detail-section');
+            allProjectDetails.forEach(section => {
+                section.style.display = 'none';
+            });
             
             projectsSection.classList.add('fade-out');
             setTimeout(() => {
                 projectsSection.style.display = 'none';
-                projectDetailSection.style.display = 'block';
-                projectDetailSection.classList.add('fade-in');
-                loadProjectData(projectId);
+                
+                // Show the specific project detail section
+                const targetSection = document.getElementById(projectId + '-detail');
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    targetSection.classList.add('fade-in');
+                }
             }, 400);
         }
         
-        function loadProjectData(projectId) {
-            const title = document.getElementById('project-detail-title');
-            const subtitle = document.getElementById('project-detail-subtitle');
-            const overviewText = document.getElementById('project-overview-text');
-            const techList = document.getElementById('project-tech-list');
-            
-            if (projectId === 'pentest-report') {
-                title.textContent = 'PENTEST REPORT';
-                subtitle.textContent = 'Comprehensive Security Assessment';
-                overviewText.innerHTML = `
-                    <p>This comprehensive penetration testing report demonstrates advanced security assessment techniques using industry-standard tools and manual testing methodologies. The project showcases systematic vulnerability identification, exploitation, and detailed documentation following OWASP guidelines.</p>
-                    <p>Key achievements include thorough reconnaissance, vulnerability scanning, manual testing verification, and professional reporting standards that meet enterprise security requirements.</p>
-                `;
-                techList.innerHTML = `
-                    <span class="tech-tag">BurpSuite</span>
-                    <span class="tech-tag highlighted">Manual Testing</span>
-                    <span class="tech-tag highlighted">OWASP</span>
-                `;
-            } else if (projectId === 'containerized-web-stack') {
-                title.textContent = 'CONTAINERIZED WEB STACK';
-                subtitle.textContent = 'Scalable Infrastructure Solution';
-                overviewText.innerHTML = `
-                    <p>This project demonstrates the implementation of a fully containerized web application stack using Docker technology. The solution includes a complete LAMP stack deployment with NGINX as a reverse proxy and load balancer.</p>
-                    <p>The architecture emphasizes scalability, maintainability, and security through containerization best practices, automated deployment processes, and robust configuration management.</p>
-                `;
-                techList.innerHTML = `
-                    <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">LAMP</span>
-                    <span class="tech-tag highlighted">NGINX</span>
-                `;
-            }
-        }
         
         // Download function
         function downloadFile(filename) {
-            // Replace this with your actual file URL or implement file serving
-            alert(`Download functionality for ${filename} would be implemented here. You'll need to host the PDF file and link to it.`);
+            // Create a download link and trigger it
+            const link = document.createElement('a');
+            link.href = 'assets/' + filename; // Assumes files are in assets/ folder
+            link.download = filename;
+            link.target = '_blank'; // Open in new tab if direct download fails
             
-            // Example of how to implement actual download:
-            // const link = document.createElement('a');
-            // link.href = '/path/to/your/' + filename;
-            // link.download = filename;
-            // link.click();
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
         
         // Handle navbar clicks
